@@ -1,0 +1,27 @@
+
+server:
+  port: 9005 #ָ�������˿ں�
+  servlet:
+    context-path: /mdzz
+
+spring:
+  profiles:
+    active: dev #Ĭ�ϻ���(��������)
+  thymeleaf:
+    cache: false
+  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource   #����������druid���ӳأ����¶���druid��������Ϣ
+    url: jdbc:mysql://127.0.0.1:3306/example?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password:
+  application:
+    name: logindemo
+
+mybatis:
+  mapper-locations: classpath*:/mapper/**Mapper.xml    #��xml�ļ�����com.XX.mapper.*�п��ܻ�����Ҳ��������⣬�����������resource�µ�mapper��
+  typeAliasesPackage: com.test.domain        #������ʵ�����λ�ã�#ʵ��ɨ�裬���package�ö��Ż��߷ֺŷָ�
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+

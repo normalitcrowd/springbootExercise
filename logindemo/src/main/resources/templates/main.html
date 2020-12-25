@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div>
+        <h3 th:text="'欢迎您：：' + ${session.nickname}"></h3>
+        <p>
+            你好！
+        </p>
+        <p>如果你看到这个页面，代表你是登录成功了</p>
+    </div>
+</head>
+<body>
+<form class="form-signout"  th:action="@{/logout}" method="post">
+    <button id = "exit" class="btn btn-lg btn-primary btn-block" type="submit" >Sign out</button>
+</form>
+<form class="form-other"  th:action="@{/other}" method="post">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >Other</button>
+</form>
+</body>
+<script src='assets/js/main.js'></script>
+</html>
